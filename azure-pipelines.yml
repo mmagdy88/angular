@@ -33,3 +33,9 @@ steps:
     ArtifactName: 'angular-app'
     publishLocation: 'Container'
   displayName: 'Publish Artifacts'
+
+- task: DownloadPipelineArtifact@2
+  inputs:
+    buildType: 'current'
+    artifactName: 'angular-app'
+    targetPath: '$(Pipeline.Workspace)'
