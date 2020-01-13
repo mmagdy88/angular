@@ -23,13 +23,13 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    Contents: '**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
-    OverWrite: true
+    SourceFolder: 'dist'
+    Contents: '**/**'
+    TargetFolder: 'angular/dist'
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    PathtoPublish: 'dist'
     ArtifactName: 'angular-app'
     publishLocation: 'Container'
   displayName: 'Publish Artifacts'
