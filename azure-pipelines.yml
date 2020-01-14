@@ -40,6 +40,7 @@ steps:
     artifactName: 'angular-app'
     targetPath: '$(Pipeline.Workspace)'
 
+
 - task: CopyFilesOverSSH@0
   inputs:
     sshEndpoint: 'Angular-Ubuntu'
